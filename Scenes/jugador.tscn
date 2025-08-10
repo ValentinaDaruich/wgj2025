@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://3nuom4agt42a"]
+
+[ext_resource type="Texture2D" uid="uid://kh6wtlb30kk7" path="res://Assets/Sprite2D/estrellita_Spritesheet-16.png" id="1_5ydob"]
+[ext_resource type="Script" uid="uid://c8e6w82xbxdh5" path="res://Scenes/character_body_2d.gd" id="1_c1mnh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1mnh"]
+atlas = ExtResource("1_5ydob")
+region = Rect2(3, 0, 114, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tn1hq"]
+atlas = ExtResource("1_5ydob")
+region = Rect2(117, 0, 114, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0p7g"]
+atlas = ExtResource("1_5ydob")
+region = Rect2(231, 0, 114, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4xcq"]
+atlas = ExtResource("1_5ydob")
+region = Rect2(345, 0, 114, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw3ti"]
+atlas = ExtResource("1_5ydob")
+region = Rect2(459, 0, 114, 170)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5nsjc"]
+animations = [{
+"frames": [{
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_c1mnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tn1hq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0p7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4xcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iw3ti")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vc6x"]
+size = Vector2(40, 74.25)
+
+[node name="Jugador" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_c1mnh")
+
+[node name="idle" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(-5, -80)
+sprite_frames = SubResource("SpriteFrames_5nsjc")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(2, -57)
+shape = SubResource("RectangleShape2D_6vc6x")

@@ -1,3 +1,29 @@
-[gd_scene format=3 uid="uid://bc32l1of0frl7"]
+[gd_scene load_steps=4 format=3 uid="uid://bc32l1of0frl7"]
 
-[node name="dia_01" type="Node3D"]
+[ext_resource type="PackedScene" uid="uid://3nuom4agt42a" path="res://Scenes/jugador.tscn" id="2_0i42v"]
+[ext_resource type="Texture2D" uid="uid://18r3sney7ud" path="res://WGJ2025BG.png" id="2_06skn"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0i42v"]
+distance = 2.22223
+
+[node name="dia_01" type="Node2D"]
+position = Vector2(57, 45)
+
+[node name="Jugador" parent="." instance=ExtResource("2_0i42v")]
+z_index = 1
+position = Vector2(316, 481)
+scale = Vector2(0.85, 0.85)
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(523, 311)
+scale = Vector2(0.660648, 0.660648)
+texture = ExtResource("2_06skn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(675, 650)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-156, -108)
+rotation = 0.120428
+scale = Vector2(9, 9)
+shape = SubResource("WorldBoundaryShape2D_0i42v")
