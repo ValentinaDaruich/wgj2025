@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbf4bk5iuobir"]
+
+[ext_resource type="Texture2D" uid="uid://bq6myf6oo1vp" path="res://Assets/cepillo.png" id="1_cce3e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6nqy"]
+size = Vector2(112, 257)
+
+[node name="thoothbrush" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6.99999, 4)
+scale = Vector2(0.540369, 0.540369)
+texture = ExtResource("1_cce3e")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-66, 110.5)
+shape = SubResource("RectangleShape2D_q6nqy")
