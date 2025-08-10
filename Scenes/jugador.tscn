@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://3nuom4agt42a"]
+[gd_scene load_steps=13 format=3 uid="uid://3nuom4agt42a"]
 
 [ext_resource type="Texture2D" uid="uid://kh6wtlb30kk7" path="res://Assets/Sprite2D/estrellita_Spritesheet-16.png" id="1_5ydob"]
 [ext_resource type="Script" uid="uid://c8e6w82xbxdh5" path="res://Scenes/character_body_2d.gd" id="1_c1mnh"]
@@ -23,6 +23,18 @@ region = Rect2(345, 0, 114, 170)
 atlas = ExtResource("1_5ydob")
 region = Rect2(459, 0, 114, 170)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nsjc"]
+atlas = ExtResource("1_5ydob")
+region = Rect2(5, 170, 113, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vc6x"]
+atlas = ExtResource("1_5ydob")
+region = Rect2(118, 170, 113, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cdix"]
+atlas = ExtResource("1_5ydob")
+region = Rect2(231, 170, 113, 170)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_5nsjc"]
 animations = [{
 "frames": [{
@@ -42,23 +54,43 @@ animations = [{
 "texture": SubResource("AtlasTexture_iw3ti")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nsjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vc6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cdix")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6vc6x"]
-size = Vector2(40, 74.25)
+size = Vector2(55, 104)
 
 [node name="Jugador" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_c1mnh")
 
-[node name="idle" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(-5, -80)
 sprite_frames = SubResource("SpriteFrames_5nsjc")
-autoplay = "default"
+animation = &"walk"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(2, -57)
+position = Vector2(-2.5, -74)
 shape = SubResource("RectangleShape2D_6vc6x")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="CharacterBody2D"]
+path_desired_distance = 5.0
+target_desired_distance = 5.0
+avoidance_enabled = true
