@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://0o38v3m430xm"]
+
+[ext_resource type="Texture2D" uid="uid://chgggl0b2qvp2" path="res://Assets/celular.png" id="1_ybpor"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qeted"]
+size = Vector2(65, 247)
+
+[node name="Interactable2" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1.5, 4.5)
+shape = SubResource("RectangleShape2D_qeted")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(10, -5)
+scale = Vector2(0.327586, 0.327586)
+texture = ExtResource("1_ybpor")

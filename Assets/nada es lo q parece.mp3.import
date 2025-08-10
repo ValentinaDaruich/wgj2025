@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://icp3cioff6te"
+path="res://.godot/imported/nada es lo q parece.mp3-2b9aa7cd6ac7cacdf659091d082c37b9.mp3str"
+
+[deps]
+
+source_file="res://Assets/nada es lo q parece.mp3"
+dest_files=["res://.godot/imported/nada es lo q parece.mp3-2b9aa7cd6ac7cacdf659091d082c37b9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

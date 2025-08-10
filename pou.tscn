@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bss3reivac66"]
+
+[ext_resource type="Texture2D" uid="uid://k70hy84x4t2h" path="res://Assets/pou sin fondo.png" id="1_5vjle"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pq8wl"]
+size = Vector2(237.365, 262.351)
+
+[node name="Interactable1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(368, 220)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_5vjle")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(368.5, 221.5)
+scale = Vector2(0.3, 0.3)
+shape = SubResource("RectangleShape2D_pq8wl")

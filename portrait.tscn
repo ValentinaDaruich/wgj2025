@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctxpir4m66slm"]
+
+[ext_resource type="Texture2D" uid="uid://dpxxiqoapymch" path="res://Assets/portaretrato sin fondo.png" id="1_mdiga"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fj88p"]
+size = Vector2(66, 104)
+
+[node name="portrait" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.99997, 2.00003)
+scale = Vector2(0.145729, 0.145729)
+texture = ExtResource("1_mdiga")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_fj88p")

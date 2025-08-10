@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyuvqw16pd4th"]
+
+[ext_resource type="Texture2D" uid="uid://d3e72w5p7vccy" path="res://Assets/peine.png" id="1_qbtkd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvgru"]
+size = Vector2(31, 53)
+
+[node name="brush" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(4.5, -3.5)
+shape = SubResource("RectangleShape2D_uvgru")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -3)
+scale = Vector2(0.0738506, 0.0738506)
+texture = ExtResource("1_qbtkd")
