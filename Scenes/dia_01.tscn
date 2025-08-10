@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bc32l1of0frl7"]
+[gd_scene load_steps=10 format=3 uid="uid://bc32l1of0frl7"]
 
 [ext_resource type="PackedScene" uid="uid://3nuom4agt42a" path="res://Scenes/jugador.tscn" id="2_0i42v"]
 [ext_resource type="Texture2D" uid="uid://18r3sney7ud" path="res://WGJ2025BG.png" id="2_06skn"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://0o38v3m430xm" path="res://cellphone.tscn" id="4_hkkaf"]
 [ext_resource type="PackedScene" uid="uid://cyuvqw16pd4th" path="res://brush.tscn" id="6_a6atf"]
 [ext_resource type="PackedScene" uid="uid://ctxpir4m66slm" path="res://portrait.tscn" id="7_hjt1g"]
+[ext_resource type="AudioStream" uid="uid://icp3cioff6te" path="res://Assets/nada es lo q parece.mp3" id="8_lhd4a"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_0i42v"]
 vertices = PackedVector2Array(193, -120.078, 226.852, -119.289, 286.906, -100.789, 518.828, 37.4766, -20.7734, 30, 83.5391, -112.523, 50.2031, -115.398, 30.1484, -82.4063, -358.602, 16.6797, -340.969, -12.25, -341.813, -84.0469, -327.547, -77.2578, -20.6094, 30.0078, -20.8594, 30)
@@ -63,3 +64,10 @@ scale = Vector2(0.5, 0.5)
 [node name="portrait" parent="." instance=ExtResource("7_hjt1g")]
 position = Vector2(124, 404)
 scale = Vector2(0.8, 0.8)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_lhd4a")
+volume_db = -0.199
+pitch_scale = 1.49
+autoplay = true
+parameters/looping = false
